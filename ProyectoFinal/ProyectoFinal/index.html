@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/ITS.ico" type="image/x-icon"/>
+
+
+    <script>
+        var accessToken = "3181b8fe7618001c26ba60c86ba70059a6f16c2f";
+        var deviceID = "200022000947373336323230";
+        var url = "https://api.particle.io/v1/devices/" + deviceID + "/Servo";
+
+        function switchOn()
+        {
+	        $.post(url, {params: "now", access_token: accessToken });
+        }  
+
+        function switchOff()
+        {   
+	        $.post(url, {params: "alarm", access_token: accessToken });
+        }  
+        </script>
+        </head>
+        <body>
+            
+            <div class="wrap">
+                <div class="widget">
+                    <div class="fecha">
+                        <p id="diaSemana" class="diaSemana"></p>
+                        <p id="dia" class="dia"></p>
+                        <p>de </p>
+                        <p id="mes" class="mes"></p>
+                        <p>del </p>
+                        <p id="year" class="year"></p>
+                    </div>
+
+                    <div class="reloj">
+                        <p id="horas" class="horas"></p>
+                        <p>:</p>
+                        <p id="minutos" class="minutos"></p>
+                        <p>:</p>
+                        <div class="caja-segundos">
+                            <p id="ampm" class="ampm"></p>
+                            <p id="segundos" class="segundos"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="/reloj.js"></script>
+            <a href="#" class="button1" onclick="switchOn()">Timbrar</a>
+            <a href="#" class="button2" onclick="switchOff()">Activar alarma</a>
+
+            
+
+        </body>
+        </html>

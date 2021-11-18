@@ -1,0 +1,84 @@
+EJEMPLO PRENDE Y APAGA LED POR 1 SEGUNDO
+
+void setup(){
+pinMode(D0,OUTPUT);
+}
+
+void lool(){
+digitalWrite(D0,HIGH);
+delay(1000);
+digitalWrite(D0,LOW);
+delay(1000);
+}
+------------------------------------------
+EJEMPLO PRENDE Y APAGA LED POR 1/2 SEGUNDO
+
+void setup(){
+pinMode(D0,OUTPUT);
+}
+
+void lool(){
+digitalWrite(D0,HIGH);
+delay(500);
+digitalWrite(D0,LOW);
+delay(500);
+}
+-----------------------------
+EJEMPLO PRENDE Y APAGA LED POR 1/4 SEGUNDO
+
+void setup(){
+pinMode(D0,OUTPUT);
+}
+
+void lool(){
+digitalWrite(D0,HIGH);
+delay(250);
+digitalWrite(D0,LOW);
+delay(250);
+}
+
+-----------------------
+practica 2
+prende y apaga medio segundo cada led
+loop por medio segundo
+
+void setup(){
+pinMode(D0,OUTPUT);
+pinMode(D1,OUTPUT);
+pinMode(D2,OUTPUT);
+pinMode(D3,OUTPUT);
+}
+
+void lool(){
+digitalWrite(D0,HIGH);
+delay(500);
+digitalWrite(D0,LOW);
+delay(500);
+
+digitalWrite(D1,HIGH);
+delay(500);
+digitalWrite(D1,LOW);
+delay(500);
+
+digitalWrite(D2,HIGH);
+delay(500);
+digitalWrite(D2,LOW);
+delay(500);
+
+digitalWrite(D3,HIGH);
+delay(500);
+digitalWrite(D3,LOW);
+delay(500);
+}
+
+-----------------------------
+practica 3
+prende led 1 y se mantiene encendido
+despues de 1 segundo
+prende led 2 y se mantiene encedido
+despues de 1 segundo
+prende led 3 y se mantiene encedido
+despues de 1 segundo
+prende led 4 y se mantiene encedido
+
+

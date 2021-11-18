@@ -1,0 +1,34 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="/style.css">
+
+<script>
+var accessToken = "3181b8fe7618001c26ba60c86ba70059a6f16c2f";
+var deviceID = "200022000947373336323230";
+var url = "https://api.particle.io/v1/devices/" + deviceID + "/Servo";
+
+function switchOn()
+{
+	$.post(url, {params: "on", access_token: accessToken });
+}  
+
+function switchOff()
+{
+	$.post(url, {params: "off", access_token: accessToken });
+}  
+
+</script>
+</head>	
+
+<body text="white" background="morning.jpg" style="background-size: cover;">
+	
+
+<h1 align="center" ><b>Alimentador de Peces</b></h1>	
+	
+<h2 align="center"><input style="width: 600px; height: 200px;  background-color: darkblue" type="button" onClick="switchOn()" value="ALIMENTAR"/></h2>
+
+<h2 align="center"><input style="width: 600px; height: 200px;  background-color: lightblue" type="button" onClick="switchOff()" value="NO ALIMENTAR"/></h2>
+	
+</body>
+</html>

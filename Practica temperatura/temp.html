@@ -1,0 +1,63 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="raphael-2.1.4.min.js"></script>
+<script src="justgage.js"></script>
+
+<script>
+var accessToken = "fd6e3a33241670d93c2b570ea150bac18f7bf7a6";
+var deviceID = "3f0030000847373336323230"
+var url = "https://api.particle.io/v1/devices/" + deviceID + "/gradosC";
+function callback(data, status){
+	if (status == "success") {
+		temp = parseFloat((data.result * 9)/5)+32;
+		temp = temp.toFixed(2);
+		g.refresh(temp);
+		setTimeout(getReading, 1000);
+	if (status == "success"){
+		temp = parseFloat(data.result);
+		temp = temp.toFixed(2);
+		f.refresh(temp);
+	}
+	}
+	else {
+		alert("There was a problem");
+	}
+}
+function getReading(){
+   	$.get(url, {access_token: accessToken}, callback);
+}
+</script>
+</head>	
+
+<body>
+<div id="gauge" class="200x160px"></div>
+<div id="gauge2" class="200x160px"></div>
+
+
+
+<script>
+var g = new JustGage({
+    id: "gauge",
+    value: 0,
+    min: 0,
+    max: 200,
+    title: "Temperatura farenheit"
+});
+getReading();
+
+var f = new JustGage({
+    id: "gauge2",
+    value: 0,
+    min: 0,
+    max: 100,
+    title: "Temperatura Centigrados"
+});
+getReading();
+</script>
+
+
+
+
+</body>
+</html>
